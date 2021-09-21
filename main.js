@@ -39,8 +39,31 @@ var arrowLog = function (msg) { return console.log(msg); };
 //     //....
 // }
 var Point = /** @class */ (function () {
-    function Point() {
+    // private x:number ;
+    // private y: number ;
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
     }
+    //getters
+    Point.prototype.getX = function () {
+        return this.x;
+    };
+    Point.prototype.getY = function () {
+        return this.y;
+    };
+    //setters
+    Point.prototype.setX = function (value) {
+        if (value < 0)
+            throw new Error('Error negatif value');
+        this.x = value;
+    };
+    Point.prototype.setY = function (value) {
+        if (value < 0)
+            throw new Error('Error negatif value');
+        this.y = value;
+    };
+    //
     Point.prototype.drawPoint = function () {
         //.....
         console.log("X: " + this.x + " , Y:" + this.y);
@@ -50,7 +73,9 @@ var Point = /** @class */ (function () {
     };
     return Point;
 }());
-var point = new Point();
-point.x = 10;
-point.y = 20;
+var point = new Point(10, 20);
+var point2 = new Point();
+var x = point.getX();
+point.setX(10);
+point.setX(-1);
 point.drawPoint();
