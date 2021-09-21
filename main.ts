@@ -1,3 +1,5 @@
+import {Point}  from './point'
+
 //Types
 
 let a : number;
@@ -45,48 +47,13 @@ let arrowLog = (msg)=> console.log(msg)
     // let getDistance = (A:Point , B: Point) =>{
     //     //....
     // }
-    
-    
-
-class Point  {
-    // private x:number ;
-    // private y: number ;
-
-    constructor ( private x?:number, private y? : number ) {
-    }
-
-    //getters
-    get X () {
-        return this.x
-    }
-    get Y () {
-        return this.y
-    }
-
-    //setters
-    set X( value){
-        if (value<0) throw new Error('Error : negatif value')
-        this.x = value
-    }
-    set Y( value){
-        if (value<0) throw new Error('Error : negatif value')
-        this.y = value
-    }
-    //
-    drawPoint () {
-        //.....
-        console.log(`X: ${this.x} , Y:${this.y}`)
-    }
-    getDistance( point:Point) {
-        //.....
-    }
-}
-
 
 let point = new Point(10,20);
 let point2 = new Point()
 
 let x = point.X
+
+console.log(x)
 point.X = 10
 point.X = -1
 point.drawPoint()

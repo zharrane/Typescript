@@ -1,3 +1,6 @@
+"use strict";
+exports.__esModule = true;
+var point_1 = require("./point");
 //Types
 var a;
 var b;
@@ -38,44 +41,10 @@ var arrowLog = function (msg) { return console.log(msg); };
 // let getDistance = (A:Point , B: Point) =>{
 //     //....
 // }
-var Point = /** @class */ (function () {
-    // private x:number ;
-    // private y: number ;
-    function Point(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-    //getters
-    Point.prototype.getX = function () {
-        return this.x;
-    };
-    Point.prototype.getY = function () {
-        return this.y;
-    };
-    //setters
-    Point.prototype.setX = function (value) {
-        if (value < 0)
-            throw new Error('Error negatif value');
-        this.x = value;
-    };
-    Point.prototype.setY = function (value) {
-        if (value < 0)
-            throw new Error('Error negatif value');
-        this.y = value;
-    };
-    //
-    Point.prototype.drawPoint = function () {
-        //.....
-        console.log("X: " + this.x + " , Y:" + this.y);
-    };
-    Point.prototype.getDistance = function (point) {
-        //.....
-    };
-    return Point;
-}());
-var point = new Point(10, 20);
-var point2 = new Point();
-var x = point.getX();
-point.setX(10);
-point.setX(-1);
+var point = new point_1.Point(10, 20);
+var point2 = new point_1.Point();
+var x = point.X;
+console.log(x);
+point.X = 10;
+point.X = -1;
 point.drawPoint();
